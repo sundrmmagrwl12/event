@@ -20,7 +20,7 @@ const MailForm = () => {
     console.log(subject);
     
     try {
-      const response = await fetch("https://event-sync-x47b.onrender.com/api/email/send", {
+      const response = await fetch("http://localhost:9000/api/email/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

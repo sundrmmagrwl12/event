@@ -33,7 +33,7 @@ const LoginSignup = ({ flag }) => {
         return;
       }
       setIsLoading(true);
-      const res = await axios.post("https://event-sync-x47b.onrender.com/api/user/login", {
+      const res = await axios.post("http://localhost:9000/api/user/login", {
         username,
         password,
       });
@@ -59,7 +59,7 @@ const LoginSignup = ({ flag }) => {
 
     try {
       const { name, email } = formData;
-      await axios.post("https://event-sync-x47b.onrender.com/api/auth/otp", {
+      await axios.post("http://localhost:9000/api/auth/otp", {
         username: name,
         email,
       });
@@ -78,7 +78,7 @@ const LoginSignup = ({ flag }) => {
 
     try {
       const { email, otp } = formData;
-      await axios.post("https://event-sync-x47b.onrender.com/api/auth/verify", { email, otp });
+      await axios.post("http://localhost:9000/api/auth/verify", { email, otp });
       setStep(3); // Move to password creation step
     } catch (err) {
       setError(err.response?.data?.message || "Failed to verify OTP");
@@ -97,7 +97,7 @@ const LoginSignup = ({ flag }) => {
       if (password !== confirmPassword) {
         throw new Error("Passwords do not match");
       }
-      await axios.post("https://event-sync-x47b.onrender.com/api/user/signup", {
+      await axios.post("http://localhost:9000/api/user/signup", {
         username: formData.name,
         email: formData.email,
         password,

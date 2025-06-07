@@ -52,7 +52,7 @@ const EventCard = ({ event }) => {
       try {
         const eventId = event._id;
         const response = await fetch(
-          `https://event-sync-x47b.onrender.com/api/events/${eventId}/checkIfApplied`,
+          `http://localhost:9000/api/events/${eventId}/checkIfApplied`,
           {
             method: "GET",
             headers: {
@@ -74,7 +74,7 @@ const EventCard = ({ event }) => {
     try {
       const eventId = event._id;
       const response = await fetch(
-        `https://event-sync-x47b.onrender.com/api/events/${eventId}/apply`,
+        `http://localhost:9000/api/events/${eventId}/apply`,
         {
           method: "POST",
           headers: {

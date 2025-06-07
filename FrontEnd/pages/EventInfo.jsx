@@ -13,7 +13,7 @@ const EventInfo = () => {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `https://event-sync-x47b.onrender.com/api/events/${eventId}`,
+          `http://localhost:9000/api/events/${eventId}`,
           {
             method: "GET",
             headers: {
@@ -26,7 +26,7 @@ const EventInfo = () => {
         setEventDetails(data.event[0]);
         console.log(eventDetails);
         const organizerResponse = await fetch(
-          `https://event-sync-x47b.onrender.com/api/users/${data.event[0].organizerId}`,
+          `http://localhost:9000/api/users/${data.event[0].organizerId}`,
           {
             method: "GET",
             headers: {

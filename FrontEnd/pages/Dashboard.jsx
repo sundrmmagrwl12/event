@@ -15,7 +15,7 @@ const Dashboard = () => {
     const fetchEvents = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get("https://event-sync-x47b.onrender.com/api/events", {
+        const response = await axios.get("http://localhost:9000/api/events", {
           params: { query: searchQuery },
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

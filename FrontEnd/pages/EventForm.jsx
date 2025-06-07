@@ -38,7 +38,7 @@ const EventForm = () => {
         return;
       }
       await axios.post(
-        "https://event-sync-x47b.onrender.com/api/events",
+        "http://localhost:9000/api/events",
         { ...formData, attendees },
         {
           headers: {
